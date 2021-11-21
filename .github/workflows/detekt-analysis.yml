@@ -1,0 +1,21 @@
+name: Scan with Detekt
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  scan:
+    name: Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Detekt
+        run: ./gradlew detektJvmMain detektJvmTest detektMetadataMain
+
+      - uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: kochange-core/build/reports/detekt/main.sarif
+          checkout_path: ${{ github.workspace }}

@@ -10,6 +10,7 @@ plugins {
 	alias(libs.plugins.kotlinMultiplatform).apply(false)
 	alias(libs.plugins.detekt).apply(false)
 	alias(libs.plugins.nexusPublish)
+	jacoco
 }
 
 val jdkVersion = libs.versions.jvm.get()
@@ -20,7 +21,9 @@ check(currentJavaVersion.isCompatibleWith(JavaVersion.toVersion(jdkVersion))) {
 
 nexusPublishing {
 	repositories {
-		sonatype()
+		sonatype() {
+			snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+		}
 	}
 }
 

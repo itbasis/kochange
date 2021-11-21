@@ -3,6 +3,8 @@ plugins {
 	id(libs.plugins.detekt.get().pluginId)
 	`maven-publish`
 	signing
+	java
+	jacoco
 }
 
 kotlin {
@@ -54,6 +56,24 @@ kotlin {
 			dependencies {
 				implementation(libs.kotest.runner.junit5)
 			}
+		}
+	}
+}
+
+tasks {
+	named("allTests") {
+		finalizedBy(jacocoTestReport)
+	}
+	withType<JacocoReport> {
+		dependsOn("allTests")
+
+		classDirectories.from(buildDir.resolve("classes/kotlin/jvm").canonicalFile.walkBottomUp().toSet())
+		sourceDirectories.from("commonMain/src", "jvmMain/src")
+
+		executionData.setFrom(buildDir.resolve("jacoco/jvmTest.exec"))
+		reports {
+			xml.required.set(true)
+			html.required.set(true)
 		}
 	}
 }
