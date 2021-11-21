@@ -1,0 +1,8 @@
+= Kochange
+
+image:https://img.shields.io/github/v/release/itbasis/kochange?include_prereleases&label=pre-release[GitHub release (latest by date including pre-releases)]
+image:https://img.shields.io/github/checks-status/itbbasis/kochange/main[GitHub branch checks state]
+
+Kochange is a port of https://github.com/knowm/XChange/[Xchange], but implemented directly to use Kotlin Multiplatform
+
+---

@@ -1,0 +1,20 @@
+@file:Suppress("unused")
+
+package dev.itbasis.kochange.core.currency
+
+public object EDO : SealedCurrency(name = "Eidoo")
+public object EEK : SealedCurrency(name = "Estonian Kroon")
+public object EGD : SealedCurrency(name = "egoldcoin")
+public object EGP : SealedCurrency(name = "Egyptian Pound")
+public object EOS : SealedCurrency()
+public object ETB : SealedCurrency(name = "Ethiopian Birr")
+public object ETC : SealedCurrency(name = "Ether Classic")
+public object ETH : SealedCurrency(name = "Ether")
+public object EUR : SealedCurrency(name = "Euro")
+public object ELF : SealedCurrency(name = "aelf")
+public object ERD : SealedCurrency(name = "Elrond")
+public object ENG : SealedCurrency(name = "Enigma")
+public object ELA : SealedCurrency(name = "Elastos")
+public object ENJ : SealedCurrency(name = "Enjin Coin")
+public object ET : SealedCurrency(name = "Electroneum")
+public object EURS : SealedCurrency(name = "STASIS EURO")

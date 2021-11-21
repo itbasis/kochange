@@ -1,0 +1,23 @@
+# https://github.com/detekt/detekt/blob/main/detekt-core/src/main/resources/default-detekt-config.yml
+
+formatting:
+  MaximumLineLength:
+    maxLineLength: 150
+  MultiLineIfElse:
+    active: true
+    autoCorrect: true
+  ParameterListWrapping:
+    active: false
+  #    autoCorrect: true
+  #    indentSize: 1
+  NoMultipleSpaces:
+    active: true
+    autoCorrect: true
+
+style:
+  MaxLineLength:
+    maxLineLength: 150
+  ReturnCount:
+    active: false
+  MagicNumber:
+    ignoreRanges: true

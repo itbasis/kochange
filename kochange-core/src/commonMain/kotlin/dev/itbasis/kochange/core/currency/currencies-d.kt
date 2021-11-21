@@ -1,0 +1,23 @@
+@file:Suppress("unused")
+
+package dev.itbasis.kochange.core.currency
+
+public object DASH : SealedCurrency(name = "Dash")
+public object DCR : SealedCurrency(name = "Decred")
+public object DGB : SealedCurrency(name = "DigiByte")
+public object DJF : SealedCurrency(name = "Djiboutian Franc")
+public object DKK : SealedCurrency(name = "Danish Krone")
+public object DOGE : SealedCurrency(name = "Dogecoin", alternatives = listOf("XDG"))
+public object DOP : SealedCurrency(name = "Dominican Peso")
+public object DGC : SealedCurrency(name = "Digitalcoin")
+public object DVC : SealedCurrency(name = "Devcoin")
+public object DRK : SealedCurrency(name = "Darkcoin")
+public object DZD : SealedCurrency(name = "Algerian Dinar")
+public object DAI : SealedCurrency(name = "Dai")
+public object DX : SealedCurrency(name = "DxChain Token")
+public object DIVI : SealedCurrency(name = "Divi")
+public object DRGN : SealedCurrency(name = "Dragonchain")
+public object DGTX : SealedCurrency(name = "Digitex Futures")
+public object DATA : SealedCurrency(name = "Streamr")
+public object DAD : SealedCurrency()
+public object DOT : SealedCurrency(name = "Polkadot")
