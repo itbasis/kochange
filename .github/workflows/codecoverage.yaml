@@ -1,10 +1,8 @@
 name: Code Coverage
 
 on  :
-  push        :
-    branches:
-      - main
-  pull_request:
+  - push
+  - pull_request
 
 jobs:
   publish-code-coverage:
@@ -27,5 +25,5 @@ jobs:
         if  : success()
         uses: codecov/codecov-action@v2
         with:
-          token  : ${{ secrets.CODECOV_TOKEN }}
-          files  : ./kochange-core/build/reports/jacoco/test/jacocoTestReport.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./kochange-core/build/reports/jacoco/test/jacocoTestReport.xml
