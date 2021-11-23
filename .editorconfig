@@ -75,7 +75,8 @@ ij_properties_spaces_around_key_value_delimiter = true
 [{*.yml,*.yaml}]
 tab_width                       = 2
 ij_yaml_indent_sequence_value   = true
-ij_yaml_align_values_properties = on_colon
+ij_yaml_align_values_properties = do_not_align
+ij_yaml_space_before_colon      = false
 
 [{.idea/*.xml, .run/*.run.xml}]
 indent_size          = 2
