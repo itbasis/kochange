@@ -3,6 +3,8 @@
 image:https://img.shields.io/github/v/tag/itbasis/kochange?color=orange&label=snapshot%20version[GitHub tag (latest by date)]
 image:https://img.shields.io/github/checks-status/itbasis/kochange/main[GitHub branch checks state]
 
-Kochange is a port of https://github.com/knowm/XChange/[Xchange], but implemented directly to use Kotlin Multiplatform
+image:https://img.shields.io/codecov/c/gh/itbasis/kochange?token=tdoGvQMrSX[Codecov]
 
----
+'''
+
+Kochange is a port of https://github.com/knowm/XChange/[Xchange], but implemented directly to use Kotlin Multiplatform

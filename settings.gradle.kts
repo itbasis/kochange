@@ -18,4 +18,6 @@ enableFeaturePreview(TYPESAFE_PROJECT_ACCESSORS.name)
 
 rootProject.name = "kochange"
 
+include(":kochange-bom")
+
 include(":kochange-core")
