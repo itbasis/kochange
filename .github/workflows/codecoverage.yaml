@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'zulu'
+          distribution: 'liberica'
 
       - name: Generate Coverage Report
         uses: gradle/gradle-build-action@v2
