@@ -9,9 +9,9 @@ public abstract class CurrencyPair protected constructor() {
 	public abstract val base: Currency
 	public abstract val counter: Currency
 
-	override fun toString(): String = "$base/$counter"
+	override fun toString(): String = "$base$DEFAULT_SEPARATOR$counter"
 
-	public fun toString(separator: String = "/"): String = "$base$separator$counter"
+	public fun toString(separator: String = DEFAULT_SEPARATOR): String = "$base$separator$counter"
 
 	override fun equals(other: Any?): Boolean {
 		if (this === other) return true
@@ -32,6 +32,8 @@ public abstract class CurrencyPair protected constructor() {
 	}
 
 	public companion object {
+		public const val DEFAULT_SEPARATOR: String = "/"
+
 		public fun resetCache() {
 			currencyPairs.clear()
 			currencyPairs.putAll(initCurrencyPairs())

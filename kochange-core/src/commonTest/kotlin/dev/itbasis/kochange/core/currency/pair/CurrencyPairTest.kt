@@ -6,6 +6,7 @@ import dev.itbasis.kochange.core.currency.EUR
 import dev.itbasis.kochange.core.currency.LINK
 import dev.itbasis.kochange.core.currency.LTC
 import dev.itbasis.kochange.core.currency.USD
+import dev.itbasis.kochange.core.currency.pair.CurrencyPair.Companion.DEFAULT_SEPARATOR
 import io.kotest.assertions.throwables.shouldThrowExactly
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.datatest.withData
@@ -50,6 +51,7 @@ internal class CurrencyPairTest : DescribeSpec() {
 			it("custom separator") {
 				@Suppress("SpellCheckingInspection")
 				withData(
+					Triple(ADA_BTC, DEFAULT_SEPARATOR, "ADA/BTC"),
 					Triple(ADA_BTC, "/", "ADA/BTC"),
 					Triple(ADA_BTC, ":", "ADA:BTC"),
 					Triple(ADA_BTC, "", "ADABTC")

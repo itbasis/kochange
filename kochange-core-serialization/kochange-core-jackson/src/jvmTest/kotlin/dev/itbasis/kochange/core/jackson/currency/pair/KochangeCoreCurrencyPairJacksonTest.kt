@@ -17,14 +17,16 @@ internal class KochangeCoreCurrencyPairJacksonTest : DescribeSpec(
 		val objectMapper = jacksonObjectMapper().registerKochangeModule()
 
 		describe("to json") {
-			it("simple element - default separator") {
-				withData(
-					ADA_BTC to "ADA/BTC",
-					BTC_LTC to "BTC/LTC"
-				) { (currencyPair, expect) ->
-					// language=JSON
-					val expectJsonString = """"$expect""""
-					objectMapper.writeValueAsString(currencyPair) shouldBe expectJsonString
+			it("simple element") {
+				it("default separator") {
+					withData(
+						ADA_BTC to "ADA/BTC",
+						BTC_LTC to "BTC/LTC"
+					) { (currencyPair, expect) ->
+						// language=JSON
+						val expectJsonString = """"$expect""""
+						objectMapper.writeValueAsString(currencyPair) shouldBe expectJsonString
+					}
 				}
 			}
 			it("list") {
