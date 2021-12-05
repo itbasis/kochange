@@ -1,11 +1,14 @@
 [versions]
 jvm = "11"
 kotlin = "1.6.0"
-kotest = "5.0.0.RC"
+jackson = "2.13.0"
+kotest = "5.0.0"
 
 [libraries]
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson" }
 kotest-assertions-core = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
+kotest-assertions-json = { group = "io.kotest", name = "kotest-assertions-json", version.ref = "kotest" }
 kotest-runner-junit5 = { group = "io.kotest", name = "kotest-runner-junit5", version.ref = "kotest" }
 kotest-framework-api = { group = "io.kotest", name = "kotest-framework-api", version.ref = "kotest" }
 kotest-framework-datatest = { group = "io.kotest", name = "kotest-framework-datatest", version.ref = "kotest" }
@@ -14,5 +17,5 @@ kotest-framework-engine = { group = "io.kotest", name = "kotest-framework-engine
 
 [plugins]
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.19.0-RC2" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.19.0" }
 nexusPublish = { id = "io.github.gradle-nexus.publish-plugin", version = "1.1.0" }

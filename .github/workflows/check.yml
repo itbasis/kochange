@@ -20,13 +20,13 @@ jobs:
         with:
           arguments: check
 
-      - uses: github/jduimovich/collect-sarif-files@main
-        with:
-          input-file-name: service/build/reports/detekt/detekt.sarif
-          merged-file-name: build/reports/detekt/detekt.sarif
-
-      - uses: github/codeql-action/upload-sarif@master
-        if: ${{ !env.ACT }}
-        with:
-          sarif_file: kochange-core/build/reports/detekt/main.sarif
-          checkout_path: ${{ github.workspace }}
+#      - uses: github/jduimovich/collect-sarif-files@main
+#        with:
+#          input-file-name: service/build/reports/detekt/detekt.sarif
+#          merged-file-name: build/reports/detekt/detekt.sarif
+#
+#      - uses: github/codeql-action/upload-sarif@master
+#        if: ${{ !env.ACT }}
+#        with:
+#          sarif_file: kochange-core/build/reports/detekt/main.sarif
+#          checkout_path: ${{ github.workspace }}

@@ -8,7 +8,8 @@ javaPlatform.allowDependencies()
 
 dependencies {
 	constraints {
-		api(platform(projects.kochangeCore))
+		api(platform(projects.kochange.kochangeCore))
+		api(platform(projects.kochange.kochangeCoreSerialization.kochangeCoreJackson))
 	}
 }
 

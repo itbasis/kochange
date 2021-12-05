@@ -21,3 +21,7 @@ rootProject.name = "kochange"
 include(":kochange-bom")
 
 include(":kochange-core")
+
+include(
+	":kochange-core-serialization:kochange-core-jackson"
+)

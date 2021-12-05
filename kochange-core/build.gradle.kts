@@ -4,41 +4,14 @@ plugins {
 	`maven-publish`
 	signing
 	java
-	jacoco
 }
 
 kotlin {
-	explicitApi()
-
-	targets.all {
-		compilations.all {
-			kotlinOptions {
-				freeCompilerArgs.plus(
-					listOf(
-						"-Xmulti-platform",
-						"-Xjsr305=strict"
-					)
-				)
-			}
-		}
-	}
-	sourceSets.all {
-		languageSettings {
-			progressiveMode = true
-		}
-	}
-
 	targets {
-
-		jvm {
-			compilations.all {
-				kotlinOptions.jvmTarget = libs.versions.jvm.get()
-			}
-		}
+		jvm {}
 	}
 
 	sourceSets {
-		val commonMain by getting {}
 		val commonTest by getting {
 			dependencies {
 				implementation(libs.kotest.framework.api)
@@ -46,7 +19,6 @@ kotlin {
 				implementation(libs.kotest.assertions.core)
 			}
 		}
-
 		val jvmMain by getting {
 			dependencies {
 				api(libs.kotlin.reflect)

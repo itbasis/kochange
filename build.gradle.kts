@@ -5,6 +5,8 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.PASSED
 import org.gradle.api.tasks.testing.logging.TestLogEvent.SKIPPED
 import org.gradle.api.tasks.testing.logging.TestLogEvent.STANDARD_ERROR
 import org.gradle.api.tasks.testing.logging.TestLogEvent.STANDARD_OUT
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
 
 plugins {
 	alias(libs.plugins.kotlinMultiplatform).apply(false)
@@ -61,6 +63,38 @@ subprojects {
 				showExceptions = true
 				exceptionFormat = FULL
 				events(FAILED, PASSED, SKIPPED, STANDARD_OUT, STANDARD_ERROR)
+			}
+		}
+	}
+
+	pluginManager.withPlugin(rootProject.libs.plugins.kotlinMultiplatform.get().pluginId) {
+		plugins.apply(rootProject.libs.plugins.detekt.get().pluginId)
+		plugins.apply("org.gradle.jacoco")
+
+		configure<KotlinMultiplatformExtension> {
+			explicitApi()
+
+			targets.all {
+				compilations.all {
+					kotlinOptions {
+						freeCompilerArgs.plus(
+							listOf(
+								"-Xmulti-platform",
+								"-Xjsr305=strict"
+							)
+						)
+					}
+				}
+			}
+			targets.withType<KotlinJvmTarget> {
+				compilations.all {
+					kotlinOptions.jvmTarget = rootProject.libs.versions.jvm.get()
+				}
+			}
+			sourceSets.all {
+				languageSettings {
+					progressiveMode = true
+				}
 			}
 		}
 	}
