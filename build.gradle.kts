@@ -35,12 +35,20 @@ subprojects {
 	}
 
 	configurations.all {
+
 		resolutionStrategy {
 			failOnDynamicVersions()
 			failOnVersionConflict()
+
 			eachDependency {
 				when (requested.group) {
-					"org.jetbrains.kotlin" -> useVersion(rootProject.libs.versions.kotlin.get())
+					"org.jetbrains.kotlin"             -> useVersion(rootProject.libs.versions.kotlin.get())
+					"io.github.classgraph"             -> useVersion(rootProject.libs.versions.classgraph.get())
+					"org.slf4j"                        -> useVersion(rootProject.libs.versions.slf4j.get())
+					"com.fasterxml.jackson"            -> useVersion(rootProject.libs.versions.jackson.get())
+					"com.fasterxml.jackson.core"       -> useVersion(rootProject.libs.versions.jackson.get())
+					"com.fasterxml.jackson.dataformat" -> useVersion(rootProject.libs.versions.jackson.get())
+					"com.fasterxml.jackson.datatype"   -> useVersion(rootProject.libs.versions.jackson.get())
 				}
 			}
 		}

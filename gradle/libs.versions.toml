@@ -1,19 +1,28 @@
 [versions]
 jvm = "11"
-kotlin = "1.6.0"
+kotlin = "1.6.10"
 jackson = "2.13.0"
-kotest = "5.0.0"
+kotest = "5.0.3"
+swagger = "2.1.11"
+classgraph = "4.8.137"
+kotlinLogging = "2.1.21"
+slf4j = "1.7.32"
 
 [libraries]
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+jackson-bom = { group = "com.fasterxml.jackson", name = "jackson-bom", version.ref = "jackson" }
 jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson" }
+swagger-core = { group = "io.swagger.core.v3", name = "swagger-core", version.ref = "swagger" }
+swagger-core-integration = { group = "io.swagger.core.v3", name = "swagger-integration", version.ref = "swagger" }
 kotest-assertions-core = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
 kotest-assertions-json = { group = "io.kotest", name = "kotest-assertions-json", version.ref = "kotest" }
 kotest-runner-junit5 = { group = "io.kotest", name = "kotest-runner-junit5", version.ref = "kotest" }
 kotest-framework-api = { group = "io.kotest", name = "kotest-framework-api", version.ref = "kotest" }
 kotest-framework-datatest = { group = "io.kotest", name = "kotest-framework-datatest", version.ref = "kotest" }
 kotest-framework-engine = { group = "io.kotest", name = "kotest-framework-engine", version.ref = "kotest" }
-#kotlinLogging = {}
+kotlin-logging-common = { group = "io.github.microutils", name = "kotlin-logging", version.ref = "kotlinLogging" }
+kotlin-logging-jvm = { group = "io.github.microutils", name = "kotlin-logging-jvm", version.ref = "kotlinLogging" }
+logback-classic = { group = "ch.qos.logback", name = "logback-classic", version = "1.2.8" }
 
 [plugins]
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
