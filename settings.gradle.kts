@@ -4,7 +4,7 @@ import org.gradle.api.internal.FeaturePreviews.Feature.TYPESAFE_PROJECT_ACCESSOR
 import org.gradle.api.internal.FeaturePreviews.Feature.VERSION_CATALOGS
 
 plugins {
-	id("com.gradle.enterprise") version "3.8"
+	id("com.gradle.enterprise") version "3.10"
 }
 gradleEnterprise {
 	buildScan {
