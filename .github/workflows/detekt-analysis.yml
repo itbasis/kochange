@@ -20,7 +20,7 @@ jobs:
       - name: Detekt
         run: ./gradlew detektJvmMain detektJvmTest detektMetadataMain
 
-      - uses: github/codeql-action/upload-sarif@v1
+      - uses: github/codeql-action/upload-sarif@v2
         if: ${{ !env.ACT }}
         with:
           sarif_file: kochange-core/build/reports/detekt/main.sarif
